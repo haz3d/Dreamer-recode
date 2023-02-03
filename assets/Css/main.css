@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+.fadeIn {
+
+    -webkit-animation: fadeIn 1s;
+}
+
+.wrapper {
+
+    background-color: #000000;
+
+    align-items: center;
+
+    z-index: -100;
+
+    width: 100%;
+
+    position: absolute;
+
+    -webkit-box-shadow: inset  0px 0px 100px #1a1919;
+
+}
+.orbiting-lines {
+
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 1000px;
+  margin: 0 auto;
+  width: 100%;
+
+  overflow: hidden;
+
+}
+.orbiting-lines:before, .orbiting-lines:after {
+
+  display: block;
+  content: " ";
+
+  width: 2560px;
+  height: 3560px;
+
+  position: absolute;
+
+  margin-top: -1280px;
+  margin-left: -1280px;
+
+  transform-origin: center;
+
+  background-position: center;
+  background-repeat: no-repeat;
+
+  z-index: 50;
+
+  top: 50%;
+  left: 50%;
+
+}
+.orbiting-lines:before {
+
+  background-image: url(../Images/cricle.png);
+
+  background-size: 100% auto;
+
+  -webkit-animation: rotate 25s infinite linear;
+  -moz-animation: rotate 25s infinite linear;
+  -o-animation: rotate 25s infinite linear;
+  animation: rotate 20s infinite linear;
+
+}
+.orbiting-lines:after {
+
+  background-image: url(assets/Images/cricle_outer.png);
+
+  background-size: 100% auto;
+
+  -webkit-animation: rotate 90s infinite linear;
+  -moz-animation: rotate 90s infinite linear;
+  -o-animation: rotate 90s infinite linear;
+  animation: rotate 1s infinite linear;
+
+}
+@keyframes rotate {
+
+  0% {
+
+    transform: rotate(0);
+
+  }
+
+  100% {
+
+    transform: rotate(360deg);
+
+  }
+root {
+  --bg-color: hsl(49 37% 94%);
+  --typewriterSpeed: 6s;
+  --typewriterCharacters: 24;
+}
+
+body {
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  background: var(--bg-color);
+}
+
+textp {
+  font-size: clamp(1rem, 3vw + 1rem, 4rem);
+  position: relative;
+  font-family: "Source Code Pro", monospace;
+  position: relative;
+  width: max-content;
+}
+
+
+}
+.textp::before {
+  background: var(--bg-color);
+  animation: typewriter var(--typewriterSpeed)
+    steps(var(--typewriterCharacters)) 1s forwards;
+}
+
+.textp::after {
+  width: 0.125em;
+  background: black;
+  animation: typewriter var(--typewriterSpeed)
+      steps(var(--typewriterCharacters)) 1s forwards,
+    blink 750ms steps(var(--typewriterCharacters)) infinite;
+}
+
+.subtitle {
+  color: hsl(0 0% 0% / 0.7);
+  font-size: 2rem;
+  font-weight: 400;
+  opacity: 0;
+  transform: translateY(3rem);
+  animation: fadeInUp 10s ease calc(var(--typewriterSpeed) + 10s) forwards;
+}
+
+@keyframes typewriter {
+  to {
+    left: 10%;
+  }
+}
+
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
