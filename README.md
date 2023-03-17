@@ -1,4 +1,4 @@
 # Dreamer-recode
 school project, don't judge ;)
 
-haz3d.github.io/Dreamer-recode
+https://haz3d.github.io/Dreamer-recode
